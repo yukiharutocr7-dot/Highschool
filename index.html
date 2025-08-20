@@ -1,390 +1,241 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Untitled</title>
-  <link rel="stylesheet" href="./style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أوزيريس - منصة الذكاء الاصطناعي العالمية المتقدمة</title>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<!doctype html>
-<html lang="ar" dir="rtl">
+    <div class="app-container">
+        <!-- Tools Panel -->
+        <div class="tools-panel">
+            <div class="tool-btn active" data-tool="chat" title="المحادثة">
+                <i class="fas fa-comments"></i>
+            </div>
+            <div class="tool-btn" data-tool="image" title="إنشاء الصور">
+                <i class="fas fa-image"></i>
+            </div>
+            <div class="tool-btn" data-tool="code" title="البرمجة">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="tool-btn" data-tool="document" title="المستندات">
+                <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="tool-btn" data-tool="analysis" title="التحليل">
+                <i class="fas fa-chart-bar"></i>
+            </div>
+            <div class="tool-btn" data-tool="search" title="البحث">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1 class="header-title">أوزيريس AI</h1>
+                <div class="header-actions">
+                    <button class="header-btn" id="theme-toggle" title="تبديل المظهر">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button class="header-btn" id="settings-btn" title="الإعدادات">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <div class="user-menu" id="user-menu">
+                        <div class="user-avatar">م</div>
+                        <span>مستخدم</span>
+                    </div>
+                </div>
+            </header>
 
-  <title>مدرسة الصف الثانوية المشتركة | التعليم للغد</title>
-  <meta name="description" content="مدرسة الصف الثانوية المشتركة: تعليم ثانوي حديث، برامج أكاديمية وأنشطة عالمية، مجتمع متنوع، تقويم فعاليات، تواصل بسهولة.">
+            <!-- Chat Container -->
+            <div class="chat-container" id="chat-container">
+                <!-- Welcome Section -->
+                <div class="welcome-section" id="welcome-section">
+                    <h1 class="welcome-title">مرحباً بك في أوزيريس</h1>
+                    <p class="welcome-subtitle">منصة الذكاء الاصطناعي المتقدمة التي تساعدك في إنجاز مهامك بكفاءة عالية</p>
+                    
+                    <!-- Tools Grid -->
+                    <div class="tools-grid">
+                        <div class="tool-card" data-action="chat">
+                            <i class="fas fa-robot"></i>
+                            <h3>المحادثة الذكية</h3>
+                            <p>تحدث مع الذكاء الاصطناعي واحصل على إجابات فورية</p>
+                        </div>
+                        <div class="tool-card" data-action="image">
+                            <i class="fas fa-palette"></i>
+                            <h3>إنشاء الصور</h3>
+                            <p>أنشئ صوراً مذهلة باستخدام الذكاء الاصطناعي</p>
+                        </div>
+                        <div class="tool-card" data-action="code">
+                            <i class="fas fa-terminal"></i>
+                            <h3>مساعد البرمجة</h3>
+                            <p>احصل على مساعدة في كتابة وتطوير الكود</p>
+                        </div>
+                        <div class="tool-card" data-action="document">
+                            <i class="fas fa-edit"></i>
+                            <h3>كتابة المحتوى</h3>
+                            <p>أنشئ مقالات ومحتوى عالي الجودة</p>
+                        </div>
+                        <div class="tool-card" data-action="analysis">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>تحليل البيانات</h3>
+                            <p>حلل البيانات واحصل على رؤى قيمة</p>
+                        </div>
+                        <div class="tool-card" data-action="translate">
+                            <i class="fas fa-language"></i>
+                            <h3>الترجمة</h3>
+                            <p>ترجم النصوص بدقة عالية</p>
+                        </div>
+                    </div>
+                </div>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="مدرسة الصف الثانوية المشتركة">
-  <meta property="og:description" content="تعليم ثانوي حديث وبرامج عالمية وتقويم فعّال.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/">
-  <meta property="og:image" content="https://example.com/cover.jpg">
+                <!-- Messages Container -->
+                <div class="messages-container" id="messages-container" style="display: none;">
+                    <!-- Messages will be dynamically added here -->
+                </div>
+            </div>
 
-  <!-- أيقونة تبويب -->
-  <link rel="icon" href="favicon.ico">
+            <!-- Input Area -->
+            <div class="input-area">
+                <div class="input-box-wrapper">
+                    <button class="stop-generating-btn" id="stop-btn">
+                        <i class="fas fa-stop"></i>
+                        إيقاف التوليد
+                    </button>
+                    
+                    <div class="input-box">
+                        <textarea class="input-field" id="message-input" placeholder="اكتب رسالتك هنا..." rows="1"></textarea>
+                        <div class="input-actions">
+                            <button class="input-action-btn file-upload-btn" title="رفع ملف">
+                                <i class="fas fa-paperclip"></i>
+                                <input type="file" id="file-input" multiple accept="image/*,text/*,.pdf,.doc,.docx">
+                            </button>
+                            <button class="input-action-btn" id="voice-btn" title="تسجيل صوتي">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            <button class="send-button" id="send-btn" title="إرسال">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-area-footer">
+                    <span class="input-hint">اضغط Enter للإرسال، Shift+Enter لسطر جديد</span>
+                </div>
+            </div>
+        </div>
 
-  <!-- خط عربي/لاتيني -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- أنماط -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- بيانات منظمة: School + Organization + بعض الدورات -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "School",
-      "name": "مدرسة الصف الثانوية المشتركة",
-      "alternateName": "Al-Saf Co-Ed Secondary School",
-      "url": "https://example.com/",
-      "logo": "https://example.com/logo.png",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "شارع التعليم 12",
-        "addressLocality": "الصف",
-        "addressRegion": "الجيزة",
-        "addressCountry": "EG",
-        "postalCode": "00000"
-      },
-      "telephone": "+20-000-000-0000",
-      "sameAs": ["https://facebook.com/yourpage", "https://instagram.com/yourpage"],
-      "department": [{
-        "@type": "EducationalOrganization",
-        "name": "القسم العلمي"
-      }, {
-        "@type": "EducationalOrganization",
-        "name": "القسم الأدبي"
-      }],
-      "knowsAbout": ["STEM", "IB", "Cambridge", "National Curriculum"],
-      "hasCourse": [{
-        "@type": "Course",
-        "name": "فيزياء متقدمة",
-        "description": "مفاهيم فيزياء حديثة للمرحلة الثانوية."
-      }, {
-        "@type": "Course",
-        "name": "اللغة الإنجليزية الأكاديمية",
-        "description": "مهارات القراءة والكتابة الأكاديمية."
-      }]
-    }
-  </script>
-
-</head>
-
-<body class="theme-auto">
-
-  <!-- رابط تخطي للمحتوى لسهولة الوصول -->
-  <a href="#main" class="skip-link">تخطي إلى المحتوى</a>
-
-  <!-- شريط علوي: تباين/لغة/وضع -->
-  <div class="topbar" role="region" aria-label="شريط أدوات">
-    <div class="container flex between wrap">
-      <div class="tiny muted" id="today"></div>
-      <div class="flex gap-sm controls">
-        <button id="langToggle" class="chip" aria-pressed="false">EN</button>
-        <button id="themeToggle" class="chip" aria-pressed="false">🌙</button>
-        <button id="contrastToggle" class="chip" aria-pressed="false">تباين عالٍ</button>
-        <label class="chip" for="reduceMotion">
-          <input id="reduceMotion" type="checkbox" /> تقليل الحركة
-        </label>
-      </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">أ</div>
+                <span class="logo-text">أوزيريس</span>
+            </div>
+            
+            <button class="new-chat-btn" id="new-chat-btn">
+                <i class="fas fa-plus"></i>
+                محادثة جديدة
+            </button>
+            
+            <div class="history-title">المحادثات السابقة</div>
+            <div class="history" id="chat-history">
+                <!-- Chat history items will be added here -->
+            </div>
+            
+            <div class="sidebar-footer">
+                <a href="#" class="footer-link" id="upgrade-link">
+                    <i class="fas fa-crown"></i>
+                    ترقية الحساب
+                </a>
+                <a href="#" class="footer-link" id="help-link">
+                    <i class="fas fa-question-circle"></i>
+                    المساعدة
+                </a>
+                <a href="#" class="footer-link" id="logout-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    تسجيل الخروج
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <!-- رأس الموقع -->
-  <header class="site-header" role="banner">
-    <div class="container header-inner">
-      <a class="brand" href="#" aria-label="العودة للرئيسية">
-        <img src="https://picsum.photos/seed/school/80/80" alt="" width="40" height="40" class="logo">
-        <span class="brand-text" data-i18n="schoolName">مدرسة الصف الثانوية المشتركة</span>
-      </a>
-
-      <nav class="nav" aria-label="الرئيسية">
-        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navList">☰</button>
-        <ul class="nav-list" id="navList">
-          <li><a href="#hero" data-i18n="nav.home">الرئيسية</a></li>
-          <li><a href="#about" data-i18n="nav.about">من نحن</a></li>
-          <li><a href="#programs" data-i18n="nav.programs">البرامج</a></li>
-          <li><a href="#news" data-i18n="nav.news">الأخبار</a></li>
-          <li><a href="#calendar" data-i18n="nav.calendar">التقويم</a></li>
-          <li><a href="#staff" data-i18n="nav.staff">الهيئة</a></li>
-          <li><a href="#admissions" data-i18n="nav.admissions">القبول</a></li>
-          <li><a href="#contact" data-i18n="nav.contact">اتصل بنا</a></li>
-        </ul>
-      </nav>
+    <!-- Modals -->
+    <!-- Settings Modal -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-content settings-modal-content">
+            <div class="settings-header">
+                <h2>الإعدادات</h2>
+                <button class="close-modal-btn" data-modal="settings-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="settings-section">
+                <h3>المظهر</h3>
+                <div class="setting-item">
+                    <label>المظهر</label>
+                    <select id="theme-select">
+                        <option value="dark">داكن</option>
+                        <option value="light">فاتح</option>
+                        <option value="auto">تلقائي</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h3>اللغة</h3>
+                <div class="setting-item">
+                    <label>لغة الواجهة</label>
+                    <select id="language-select">
+                        <option value="ar">العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- شريط إعلانات/تنبيهات -->
-    <div class="announce" role="region" aria-label="إعلانات">
-      <div class="container ticker" id="ticker" aria-live="polite">
-        <span>📣 بدء التسجيل للفصل الأول — اخر موعد 30 سبتمبر.</span>
-        <span>🏅 تهانينا لفريق الروبوت على الفوز الإقليمي!</span>
-        <span>🗓️ عطلة منتصف الفصل: 20–24 أكتوبر.</span>
-      </div>
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>تسجيل الدخول</h2>
+            </div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="email" placeholder="البريد الإلكتروني" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="كلمة المرور" required>
+                </div>
+                <button type="submit" class="login-btn">تسجيل الدخول</button>
+            </form>
+            
+            <div class="divider">أو</div>
+            
+            <button class="login-btn google-login-btn">
+                <i class="fab fa-google"></i>
+                تسجيل الدخول بجوجل
+            </button>
+        </div>
     </div>
-  </header>
 
-  <main id="main">
-
-    <!-- HERO -->
-    <section id="hero" class="hero" aria-label="عرض رئيسي">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <h1 data-i18n="hero.title">نُعدّ قادة الغد بتعليم عالمي وتجربة إنسانية ثرية.</h1>
-          <p class="muted" data-i18n="hero.sub">
-            مناهج حديثة، أنشطة دولية، ومجتمع متنوع يدعم طلابنا للتميّز محليًا وعالميًا.
-          </p>
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="#admissions" data-i18n="cta.apply">قدِّم الآن</a>
-            <a class="btn btn-ghost" href="#programs" data-i18n="cta.explore">استكشف البرامج</a>
-          </div>
-          <form id="siteSearch" class="searchbar" role="search" aria-label="بحث الموقع">
-            <input type="search" id="q" placeholder="ابحث في الأخبار والبرامج…" aria-label="بحث">
-            <button class="btn" type="submit">بحث</button>
-          </form>
-          <div id="searchResults" class="search-results" hidden></div>
-        </div>
-        <div class="hero-media" aria-hidden="true">
-          <div class="slides" id="slides">
-            <img src="https://picsum.photos/seed/campus/1200/600" alt="" loading="lazy">
-            <img src="https://picsum.photos/seed/lab/1200/600" alt="" loading="lazy">
-            <img src="https://picsum.photos/seed/sports/1200/600" alt="" loading="lazy">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- من نحن -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2 data-i18n="about.title">من نحن</h2>
-        <p data-i18n="about.body">
-          مدرسة ثانوية مختلطة تقدّم برامج وطنية ودولية (STEM، Cambridge، IB-Style) مع تركيز على القيم والتميز الأكاديمي والأنشطة العالمية.
-        </p>
-        <ul class="pill-list">
-          <li>📚 أكاديميات تخصصية</li>
-          <li>🤝 شراكات تبادل طلابي</li>
-          <li>🧪 معامل حديثة</li>
-          <li>⚽ رياضات وبطولات</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- البرامج مع فلترة -->
-    <section id="programs" class="section section-alt">
-      <div class="container">
-        <div class="flex between wrap g">
-          <h2 data-i18n="programs.title">البرامج الأكاديمية</h2>
-          <div class="filters">
-            <button class="chip filter active" data-filter="all" data-i18n="filter.all">الكل</button>
-            <button class="chip filter" data-filter="stem">STEM</button>
-            <button class="chip filter" data-filter="humanities" data-i18n="filter.hum">العلوم الإنسانية</button>
-            <button class="chip filter" data-filter="sports" data-i18n="filter.sports">الرياضة</button>
-          </div>
-        </div>
-        <div class="grid cards" id="programCards" data-indexable>
-          <article class="card program" data-tags="stem">
-            <h3>رياضيات متقدمة</h3>
-            <p>حساب تفاضل وتكامل وإحصاء.</p>
-          </article>
-          <article class="card program" data-tags="stem">
-            <h3>فيزياء تطبيقية</h3>
-            <p>مشروعات مختبرية وتعلّم بالممارسة.</p>
-          </article>
-          <article class="card program" data-tags="humanities">
-            <h3>التاريخ العالمي</h3>
-            <p>حضارات وثقافات مقارنة.</p>
-          </article>
-          <article class="card program" data-tags="sports">
-            <h3>إدارة الأداء الرياضي</h3>
-            <p>لياقة وتغذية وبطولات.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- الأخبار / المدونة -->
-    <section id="news" class="section">
-      <div class="container">
-        <h2 data-i18n="news.title">الأخبار والإعلانات</h2>
-        <div class="grid cards" id="newsCards" data-indexable>
-          <article class="card">
-            <h3>حفل تكريم المتفوقين</h3>
-            <p>تكريم 50 طالبًا ضمن المراكز الأولى على مستوى المحافظة.</p>
-          </article>
-          <article class="card">
-            <h3>شراكة تبادل طلابي</h3>
-            <p>برنامج تبادل مع مدرسة دولية في برلين لمدة أسبوعين.</p>
-          </article>
-          <article class="card">
-            <h3>أسبوع العلوم</h3>
-            <p>معارض وتجارب ومسابقات بحثية لطلاب STEM.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- التقويم (Google Calendar embed) -->
-    <section id="calendar" class="section section-alt">
-      <div class="container">
-        <h2 data-i18n="calendar.title">التقويم المدرسي</h2>
-        <p class="muted" data-i18n="calendar.note">
-          هذا التقويم يُسحب تلقائيًا من Google Calendar. استبدل رابط iframe برابط تقويم المدرسة العام.
-        </p>
-        <div class="calendar-embed" role="region" aria-label="تقويم">
-          <!-- استبدل src بتقويمك العام من إعدادات Google Calendar > Integrate calendar -->
-          <iframe title="School Calendar" style="border:0" width="100%" height="500" src="https://calendar.google.com/calendar/embed?src=c_classroom6a%40group.calendar.google.com&ctz=Africa%2FCairo" loading="lazy"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- الهيئة التعليمية -->
-    <section id="staff" class="section">
-      <div class="container">
-        <h2 data-i18n="staff.title">الهيئة التعليمية والإدارية</h2>
-        <div class="grid staff-grid" data-indexable>
-          <figure class="card staff">
-            <img src="https://picsum.photos/seed/principal/300/220" alt="مدير المدرسة">
-            <figcaption>
-              <h3>أ. أحمد سالم</h3>
-              <p>مدير المدرسة</p>
-            </figcaption>
-          </figure>
-          <figure class="card staff">
-            <img src="https://picsum.photos/seed/teacher1/300/220" alt="معلمة فيزياء">
-            <figcaption>
-              <h3>م. **** </h3>
-              <p>رئيس قسم الفيزياء</p>
-            </figcaption>
-          </figure>
-          <figure class="card staff">
-            <img src="https://picsum.photos/seed/teacher2/300/220" alt="معلم لغة عربية">
-            <figcaption>
-              <h3>أ. هيثم خالد</h3>
-              <p>اللغة العربية</p>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- القبول -->
-    <section id="admissions" class="section section-accent">
-      <div class="container">
-        <h2 data-i18n="adm.title">القبول والتسجيل</h2>
-        <p data-i18n="adm.body">املأ النموذج وسنتواصل معك خلال 48 ساعة.</p>
-        <form id="applyForm" class="form-grid" novalidate>
-          <label>الاسم الكامل<input required type="text" name="fullName" aria-required="true"></label>
-          <label>البريد الإلكتروني<input type="email" name="email"></label>
-          <label>الصف الدراسي
-            <select name="grade">
-              <option>الأول الثانوي</option>
-              <option>الثاني الثانوي</option>
-              <option>الثالث الثانوي</option>
-            </select>
-          </label>
-          <label class="span-2">رسالة
-            <textarea name="msg" rows="4" required></textarea>
-          </label>
-          <button class="btn btn-dark" type="submit" data-i18n="adm.submit">إرسال الطلب</button>
-          <p class="muted tiny" data-i18n="adm.privacy">لن نشارك بياناتك مع أطراف ثالثة.</p>
-        </form>
-      </div>
-    </section>
-
-    <!-- الشهادات (Testimonials) -->
-    <section class="section">
-      <div class="container">
-        <h2 data-i18n="testi.title">ماذا يقول مجتمعنا</h2>
-        <div class="carousel" id="testi">
-          <blockquote>“أفضل بيئة تعلم ساعدت ابني على الإبداع.” — ولي أمر</blockquote>
-          <blockquote>“أنشطة عالمية ومعلمون داعمون.” — طالبة</blockquote>
-          <blockquote>“مختبرات حديثة وفرص بحثية حقيقية.” — طالب</blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- معرض صور -->
-    <section class="section section-alt">
-      <div class="container">
-        <h2 data-i18n="gallery.title">معرض الأنشطة</h2>
-        <div class="masonry">
-          <img src="https://picsum.photos/seed/a/500/350" alt="مختبر العلوم">
-          <img src="https://picsum.photos/seed/b/500/400" alt="مكتبة المدرسة">
-          <img src="https://picsum.photos/seed/c/500/320" alt="مباراة كرة قدم">
-          <img src="https://picsum.photos/seed/d/500/360" alt="قاعة الفنون">
-        </div>
-      </div>
-    </section>
-
-    <!-- الأسئلة الشائعة -->
-    <section class="section">
-      <div class="container">
-        <h2 data-i18n="faq.title">الأسئلة الشائعة</h2>
-        <details>
-          <summary>ما مواعيد الدوام؟</summary>
-          <p>الأحد–الخميس 8:00–14:30.</p>
-        </details>
-        <details>
-          <summary>هل لديكم برنامج تبادل دولي؟</summary>
-          <p>نعم، مع مدارس شريكة في أوروبا وآسيا.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- التواصل + الخريطة -->
-    <section id="contact" class="section section-alt">
-      <div class="container contact-grid">
-        <div>
-          <h2 data-i18n="contact.title">اتصل بنا</h2>
-          <form id="contactForm" class="form-grid" novalidate>
-            <label>اسمك<input type="text" name="name" required></label>
-            <label>البريد<input type="email" name="email"></label>
-            <label class="span-2">رسالتك<textarea rows="4" name="message" required></textarea></label>
-            <button class="btn btn-primary" type="submit" data-i18n="contact.send">إرسال</button>
-            <label class="span-2">
-              <input type="checkbox" required> أوافق على شروط الخصوصية
-            </label>
-            <div class="muted tiny" data-i18n="contact.note">هذا النموذج تجريبي (بدون خادم). سنعرض رسالة تأكيد فورية.</div>
-          </form>
-        </div>
-        <div>
-          <h3 data-i18n="contact.map">موقعنا</h3>
-          <div class="map-embed">
-            <iframe title="School Map" width="100%" height="300" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Giza&output=embed"></iframe>
-          </div>
-          <ul class="list">
-            <li>📍 الصف، الجيزة</li>
-            <li>☎️ +20-000-000-0000</li>
-            <li>✉️ info@example.com</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- تذييل -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <small>© <span id="year"></span> <span data-i18n="schoolName">مدرسة الصف الثانوية المشتركة</span></small>
-      <nav aria-label="روابط إضافية">
-        <a href="#privacy">سياسة الخصوصية</a>
-        <a href="#terms">الشروط</a>
-      </nav>
-    </div>
-  </footer>
-
-  <script src="app.js" defer></script>
-</body>
-
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.11/purify.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
